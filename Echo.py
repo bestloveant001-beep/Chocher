@@ -8,7 +8,7 @@ import os
 
 # โหลดคีย์ API จากไฟล์ .env
 load_dotenv()
-openai.api_key = os.getenv("AIzaSyAaLyJHKYRdE1WCaZBIQhVHiD8OWJDWmJ0")
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # เริ่มต้นเครื่องมือพูด
 engine = pyttsx3.init()
@@ -92,4 +92,4 @@ def personal_assistant():
 
 if __name__ == "__main__":
     personal_assistant()
-      
+    
