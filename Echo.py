@@ -8,7 +8,7 @@ import os
 
 # โหลดคีย์ API จากไฟล์ .env
 load_dotenv()
-openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = os.getenv("AIzaSyAaLyJHKYRdE1WCaZBIQhVHiD8OWJDWmJ0")
 
 # เริ่มต้นเครื่องมือพูด
 engine = pyttsx3.init()
