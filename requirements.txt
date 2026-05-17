@@ -1,3 +1,5 @@
 speechrecognition==3.10.0
 pyttsx3==2.90
 openai==1.30.0
+python-dotenv==1.0.1
+requests==2.31.0
