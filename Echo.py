@@ -19,6 +19,8 @@ engine.setProperty('voice', voices[0].id)
 
 # ตั้งค่าพื้นที่ของคุณ เพื่อให้แจ้งเตือนตรงจังหวัดที่คุณอยู่
 MY_PROVINCE = "กรุงเทพมหานคร" # แก้เป็นจังหวัดของคุณได้เลยครับ
+# ตั้งค่าลิงก์หน้าเว็บส่วนตัวของคุณ
+MY_WEBSITE = "https://ลิงก์เว็บของคุณที่นี่" # แก้เป็นลิงก์เว็บของคุณครับ
 
 def speak(text):
     engine.say(text)
@@ -87,7 +89,7 @@ def get_disaster_advice(disaster_type):
 # ---------------------------------------------------------------------------
 
 def personal_assistant():
-    speak(f"สวัสดีครับ ผมคือ Echo ผู้ช่วยส่วนตัวของคุณ และฉันจะช่วยเฝ้าระวังภัยให้คุณด้วยครับ มีอะไรที่ผมสามารถช่วยเหลือไหมครับ")
+    speak(f"สวัสดีครับ ผมคือ Echo ผู้ช่วยส่วนตัวของคุณ และฉันจะช่วยเฝ้าระวังภัยและดูแลคุณด้วยครับ มีอะไรที่ผมสามารถช่วยเหลือไหมครับ")
     
     while True:
         command = listen()
@@ -109,7 +111,7 @@ def personal_assistant():
             speak(f"วันนี้คือวันที่ {date_str}")
 
         elif "เปิดเว็บ" in command or "เปิดไซต์" in command:
-            speak("กรุณาบอกชื่อเว็บไซต์ที่ต้องการเปิดครับ")
+            speak("กรุณาบอกชื่อเว็บไซต์ที่ต้องการเปิดครับ เช่น กูเกิล ยูทูป หรือ เว็บของฉัน")
             site_name = listen()
             if "กูเกิล" in site_name:
                 webbrowser.open("https://www.google.co.th")
@@ -117,6 +119,9 @@ def personal_assistant():
             elif "ยูทูป" in site_name:
                 webbrowser.open("https://www.youtube.com")
                 speak("กำลังเปิดหน้าเว็บยูทูปครับ")
+            elif "ของฉัน" in site_name or "ส่วนตัว" in site_name:
+                webbrowser.open(MY_WEBSITE)
+                speak("กำลังเปิดหน้าเว็บส่วนตัวของคุณครับ")
             else:
                 speak("ขออภัยครับ ผมยังไม่สามารถเปิดเว็บไซต์ที่คุณต้องการได้ครับ")
 
